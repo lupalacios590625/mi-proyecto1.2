@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Mi Luis Sergio🥹♥️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #21752c, #94b399);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 40px;
+      font-size: 3em;
+      color: #812e68;
+      animation: fadeIn 2s ease-in-out;
+    }
+    p {
+      font-size: 1.5em;
+      color: #444242;
+      max-width: 600px;
+      margin: 20px auto;
+      animation: fadeIn 3s ease-in-out;
+    }
+    button {
+      background-color: #721563;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: transform 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background-color: #8d1e91;
+    }
+    .hidden-message {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #023607;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+    /* Corazones flotantes */
+    .heart {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: rgb(160, 5, 18);
+      transform: rotate(45deg);
+      animation: floatUp 5s infinite;
+      opacity: 0.8;
+    }
+    .heart::after,
+    .heart::before {
+      content: "";
+      position: absolute;
+      background: rgb(160, 5, 18);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+      100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Imagen romántica -->
+  <img src="dirac.jpeg" alt="Romántica" style="max-width:50%; margin-top:40px; border-radius:50px; box-shadow:0 10px 8px #023607;">
+
+  <h1>Hola, mi amolchito😚♥️</h1>
+  <p>Solo quería recordarte lo mucho que te amo y lo feliz que me haces cada día. <br>
+     Gracias por ser tú el hombre de mi vida.🔐♥️</p>
+  <button onclick="mostrarMensaje()">Haz clic aquí</button>
+  <div class="hidden-message" id="mensaje">
+    Eres mi persona favorita en todo el universo✨ <br>
+    Te amo con todo mi corazón, mi rey 👩🏻‍❤️‍💋‍👨🏽♥️
+  </div>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById("mensaje").style.display = "block";
+    }
+
+    // Crear corazones flotando
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+      heart.style.width = heart.style.height = 10 + Math.random() * 20 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    setInterval(crearCorazon, 400);
+  </script>
+</body>
+</html>
